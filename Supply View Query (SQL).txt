@@ -1,0 +1,47 @@
+
+--Chart 1
+create view ProductRevenue as
+Select Product_Type , Sum(Revenue)as TotalRevenue
+from Supply_Data
+group by Product_Type
+
+--chart 2
+Create view MonthWiseSales as
+Select MONTH(Date) as Months , Sum(Revenue) as MonthsTotal 
+from Supply_Data
+group by MONTH(Date)
+
+--Chart  3
+Create view GenderswiseQuantity as
+select Gender , Sum(Quantity) as TotalQuantity 
+from Supply_Data 
+group by Gender 
+
+--Chart 4
+Create view Transportation as 
+select Transportation_modes , Avg(Costs) as [Avg Costs]
+from Supply_Data
+group by Transportation_Modes 
+
+
+--Chart 5 
+Create view  Supplierss as
+Select Supplier , SUM(Quantity) as TotalQuantity
+from Supply_Data
+Group by Supplier
+
+
+--Chart 6
+
+Create view LocationSales as
+Select Location , Sum(Revenue) as MonthsTotal 
+from Supply_Data
+group by Location
+
+
+--Chart 7
+Create view RouteWiseCost as
+select  Routes , AVG(Costs) as AVG_Cost
+from Supply_Data
+group by Routes
+
